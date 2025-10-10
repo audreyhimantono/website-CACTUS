@@ -1,0 +1,15 @@
+# netlify.toml
+[build]
+  # Use npx to run Cactus locally (no global install needed)
+  command = "npx cactus build"
+  
+  # The folder where Cactus outputs the built site
+  publish = ".build"
+
+# Optional: specify environment variables if needed
+[build.environment]
+  NODE_VERSION = "20"
+
+# Optional: deploy settings for production
+[context.production.environment]
+  NODE_ENV = "production"
