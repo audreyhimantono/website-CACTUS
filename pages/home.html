@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="home-section" id="home">
+    <div class="main-container">
+        <div class="home-container">
+            <div class="home-introduction">
+                <p class="filler">
+                    <br><br><br><br><br>
+                </p>
+                <div class="introduction-animation">
+                    <h1>Hi, I'm Audrey</h1>
+                </div>
+                <div class="introduction-animation">
+                    <p class="subtitle">
+                        <span class="light">
+                            Multi-skilled hybrid professional
+                        </span>
+                    </p>
+                </div>
+                <p class="filler">
+                    <br><br><br><br><br>
+                </p>
+                <div class="introduction-animation">
+                    <a href="#overview" id="scrollDownCta" class="scroll-down-cta">
+                        Get to Know Me <i class="fa fa-arrow-down"></i>
+                    </a> 
+                </div>
+            </div>
+            <div class="home-presentation-section">
+                <div class="overview" id="overview">
+                    <h1>Overview</h1>
+                    <p class="overview-text">
+                        Global citizen with cross-industry experience and cultural fluency.
+                        Driven by continuous learning, I have the ability to pick up new things rapidly and thrive in new environments.
+                        My broad range of experience allows me to bring fresh and innovative perspectives to complex challenges.
+                    </p>
+                    <div class="overview-grid">
+                        <div class="overview-item">
+                            <h4 class="overview-title" data-target="5">5</h4>
+                            <p>industries</p>
+                        </div>
+                        <div class="overview-item">
+                            <h4 class="overview-title" data-target="4">4</h4>
+                            <p>countries</p>
+                        </div>
+                        <div class="overview-item">
+                            <h4 class="overview-title" data-target="5">5</h4>
+                            <p>languages</p>
+                        </div>
+                    <!-- add a JS function that counts up -->
+                     </div>
+                </div>
+                <div class="expertise">
+                    <h1>Expertise</h1>
+                    <div class="expertise-grid">
+                        <div class="expertise-item">
+                            <h4 class="expertise-title">Client & Customer Service</h4>
+                            <p>
+                                From front-line customer service in hospitality to client-facing analyst roles,
+                                I have built strong expertise in understanding client needs, solving problems, and communicating ideas clearly.
+                                I've delivered rapid market insights under pressure as well as more detailed valuations  
+                                both to Pension Funds and Hedge Funds. 
+                            </p>
+                            <p class="conclusion">
+                                My approach to building relationships is always consistent to my values.
+                            </p>
+                        </div>
+                        <div class="expertise-item">
+                            <h4 class="expertise-title">Modelling</h4>
+                            <p>
+                                I have hands-on experience in financial and asset modelling, 
+                                with a particular focus on fixed income, derivatives, and multi-asset portfolios, as well as 
+                                development of modelling new in-house indices with ~£2 trillion MV.
+                                On a broader level, my experience also include company valuations using DCF and comparables. 
+                            </p>
+                            <p class="conclusion">
+                                The models and spreadsheets I build focus on usability and coherent design, so the inputs and outputs can be clearly understood.
+                            </p>
+                        </div>
+                        <div class="expertise-item">
+                            <h4 class="expertise-title">Research & Analytics</h4>
+                            <p>
+                                My research experience spans both professional and academic, 
+                                from international relations, policy, and political risk during my studies, to UX, and financial market analyses. 
+                                Some noteworthy research I've conducted are 
+                                my dissertation where I examined whether Indonesia is under the influence of global neocolonialism, 
+                                and a report regarding the Dutch Pension Fund reform, potential effects on the markets and 
+                                investment opportunities in the short-term bond markets and long-end euro swap payers.
+                            </p>
+                            <p class="conclusion">
+                                My research strives to be clear, concise, and actionable for the reader.
+                            </p>
+                        </div>
+                        <div class="expertise-item">
+                            <h4 class="expertise-title">Data & Programming</h4>
+                            <p>
+                                I use programming languages as a tool to achieve whatever goal or vision I have in mind. 
+                                In my previous roles and in my personal life, I have always self-taught to automate small manual processes in order to cut tedious repetitive work. 
+                                I'm experienced in auditing datasets, rectifying 1000+ datapoints at a time, as well as retrieving and visualising data, simple ETL workflows, and now also web-development.
+                            </p>
+                            <p class="conclusion">
+                                My resourcefulness and ability to self-teach allow me to approach coding as a problem-solving tool.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="industries">
+                    <div class="industries-wrapper">
+                        <h1>Industries</h1>
+                        <div class="industries-grid-2">
+                            <div class="industries-item">
+                                <h4 class="industries-title">Financial Services</h4>
+                                <p class="industries-subtitle">Client Facing, Multi-Asset, Analytics, Sell-Side, Data</p>
+                            </div>
+                            <div class="industries-item">
+                                <h4 class="industries-title">Events & Marketing</h4>
+                                <p class="industries-subtitle">University societies' events, social media, and graphics</p>
+                            </div>
+                        </div>
+                        <div class="industries-grid-3">
+                            <div class="industries-item">
+                                <h4 class="industries-title">Hospitality</h4>
+                                <p class="industries-subtitle">Front of House at a local restaurant and grocery shop</p>
+                            </div>
+                            <div class="industries-item">
+                                <h4 class="industries-title">Web Design & Development</h4>
+                                <p class="industries-subtitle">Personal and university societies' websites</p>
+                            </div>
+                            <div class="industries-item">
+                                <h4 class="industries-title">Politics, IR, and NGOs</h4>
+                                <p class="industries-subtitle">Major in European Studies and Political Science and volunteer / intern at non-profits</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="companies-education-row">
+                    <div class="companies">
+                        <h1>Companies</h1>
+                        <div class="companies-logos">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/companies/moodys.svg' %}" alt="moodys">                            
+                            <img class="logo-svg" src="{% static '/static/images/homepage/companies/nomura.svg' %}" alt="nomura">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/companies/gs.svg' %}" alt="gs">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/companies/pwc.svg' %}" alt="pwc">
+                        </div>
+                    </div>
+                    <div class="education">
+                        <h1>Education</h1>
+                        <div class="education-logos">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/education/kcl.svg' %}" alt="kcl">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/education/scpo.svg' %}" alt="scpo">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/education/fe.svg' %}" alt="fe">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/education/codecademy.svg' %}" alt="codecademy">
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-contact-row">
+                    <div class="skills">
+                        <h1>Skills and Technologies</h1>
+                        <div class="skills-logos">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/skills/python.svg' %}" alt="python">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/skills/html5.svg' %}" alt="html5">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/skills/css.svg' %}" alt="css">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/skills/js.png' %}" alt="javascript">
+
+                            <img class="logo-svg" src="{% static '/static/images/homepage/skills/excel.png' %}" alt="excel">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/skills/sql.png' %}" alt="sql">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/skills/stata.svg' %}" alt="stata">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/skills/vba.svg' %}" alt="vba">
+
+                            <img class="logo-svg" src="{% static '/static/images/homepage/skills/canva.svg' %}" alt="canva">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/skills/figma.svg' %}" alt="figma">
+
+                            <img class="logo-svg" src="{% static '/static/images/homepage/skills/notion.svg' %}" alt="notion">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/skills/trello.svg' %}" alt="trello">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/skills/miro.svg' %}" alt="miro">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/skills/confluence.svg' %}" alt="confluence">
+                            <img class="logo-svg" src="{% static '/static/images/homepage/skills/jira.svg' %}" alt="jira">
+                        </div>
+                    </div>
+                    <div class="contact">
+                        <h1>Caught your eye?</h1>
+                        <p class="get-in-touch">Get in touch below</p>
+                    </div>
+                </div>
+            </div>
+            <div class="test-long page">
+                <p>
+                </p>
+            </div>
+            <p>
+            </p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+    

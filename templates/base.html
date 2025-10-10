@@ -1,74 +1,81 @@
+{% load static %}
+
+<!-- Scripts  -->
+<script src="{% static '/static/js/base.js' %}"></script>
+<script src="{% static '/static/js/home.js' %}"></script>
+<script src="{% static '/static/js/responsive_nav.js' %}"></script>
+<script src="{% static '/static/js/gallery_filter.js' %}"></script>
+<script src="{% static '/static/js/about.js' %}"></script>
+
+<!-- Font Awesome Icons -->
+<script src="https://kit.fontawesome.com/05f7a81b46.js" crossorigin="anonymous"></script>
+
+
+<!-- Google Font Import -->
+ <!-- Montserrat -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- Poller One -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poller+One&display=swap" rel="stylesheet">
+<!-- DM Serif Display -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<!-- Oswald -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poller+One&display=swap" rel="stylesheet">
+
 <!DOCTYPE html>
-<html class="no-js">
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-
-        <link rel="stylesheet" href="{% static '/static/css/bootstrap.css' %}">
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
-        <link rel="stylesheet" href="{% static '/static/css/bootstrap-theme.css' %}">
-        <link rel="stylesheet" href="{% static '/static/css/main.css' %}">
-        <script src="{% static '/static/js/vendor/modernizr-2.6.2.js' %}"></script>
+        <meta charset="UTF-8">
+        <title>{% block title %}Audrey Himantono{% endblock %}</title>
+        <link rel="stylesheet" href="{% static '/static/css/base.css' %}">
+        <link rel="stylesheet" href="{% static '/static/css/home.css' %}">
+        <link rel="stylesheet" href="{% static '/static/css/about.css' %}">
+        <link rel="stylesheet" href="{% static '/static/css/fitness.css' %}">
+        <link rel="stylesheet" href="{% static '/static/css/cafe.css' %}">
+        {% block head %}{% endblock %}
     </head>
-
     <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{% url "/index.html" %}">Project name</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="{% if_current_page '/index.html' 'active' '' %}"><a href="{% url '/index.html' %}">Home</a></li>
-            <li class="{% if_current_page '/about.html' 'active' '' %}"><a href="{% url '/about.html' %}">About</a></li>
-            <li class="{% if_current_page '/contact.html' 'active' '' %}"><a href="{% url '/contact.html' %}">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
+        <header class="header-area header-sticky">
+            <div class="hf-container">
+                <nav class="main-nav">
+                    <h1 class="header-title">Audrey Himantono</h1>
+                    <ul id="dropdown-menu" class="nav">
+                        <li class="scroll-to-section"><a href="{% url '/home.html' %}#top" class="active">Home</a></li>
+                        <li><a href="{% url '/cafe.html' %}">Cafe</a></li>
+                        <li><a href="{% url '/fitness.html' %}">Fitness</a></li>
+                        <li><a href="{% url '/about.html' %}">About</a></li>
+                    </ul>
+                    <a href="#responsive-nav" class='menu-trigger'>
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </nav>
             </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+        </header>
+        <main>
+            <div class="main-container"></div>
+            {% block content %}{% endblock %}
+        </main>
+        <footer class="footer-area">
+            <div class="hf-container">
+                <p class="footer-text"></p>
+                <ul class="social-icons">
+                    <li><a href="mailto:audreyhimantono@gmail.com"><i class="fa fa-envelope"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/audreyhimantono/"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://www.instagram.com/audrey_musclemami/"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+                <p class="footer-addition">
+                    Designed and developed by Audrey Himantono.
+                    <br>
+                    Built with HTML, CSS, JavaScript, Python, Cactus. 
+                </p>
             </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </div>
-
-    {% block body %}
-    {% endblock %}
-
-    <script src="{% static '/static/js/vendor/jquery-1.10.1.js' %}"></script>
-    <script src="{% static '/static/js/vendor/bootstrap.js' %}"></script>
-    <script src="{% static '/static/js/main.js' %}"></script>
-  </body>
-
-  {% block scripts %}
-  {% endblock %}
+        </footer>
+    </body>
 </html>

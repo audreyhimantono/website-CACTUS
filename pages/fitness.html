@@ -1,0 +1,250 @@
+ {% extends "base.html" %}
+ {% load static %}
+
+{% block content %}
+
+<section class="fitness-section" id="fitness">
+    <div class="main-container">
+        <div class="fitness-container">
+            <div class="fitness-introduction">
+                <h1>Fitness</h1>
+                <p class="subtitle">
+                    <span class="light">
+                        Managing chronic illness with movement, mindset, and sports.
+                    </span>
+                </p>
+                <p class="fitness-introduction-text">
+                    I've always had an overactive immune system as a young child, 
+                    with doctors never finding the root cause and only addressing and overmedicating the symptoms.
+                    During the past years, I've worked with specialists to work on managing these holistically, 
+                    for which I found a data-driven approach to movement therapy and staying active whilst listening to my body through its constraints and flare-ups to be the most effective.
+                </p>
+            </div>
+            <div class="fitness-gallery-section">
+                <h1>Gallery</h1>
+                <p>
+                    See below some clips of the journey and progress
+                </p>
+                <div class="gallery-filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="climbing">Climbing</button>
+                    <button class="filter-btn" data-filter="acrobatics">Acrobatics</button>
+                    <button class="filter-btn" data-filter="sports">Sports</button>
+                    <button class="filter-btn" data-filter="misc">Other</button>
+                </div>
+                <div class="fitness-gallery">
+                    <div class="gallery-item" data-category="misc" id="fibro-video">
+                        <video class="gallery-photo" controls playsinline poster="{% static '/static/images/fitness/fibro-preview.PNG' %}">
+                            <source src="{% static '/static/images/fitness/fibro-reel.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Fibromyalgia Diagnosis</div>
+                    </div>
+                    <div class="gallery-item" data-category="aud">
+                        <img class="gallery-photo" src="{% static '/static/images/fitness/aud.JPEG' %}" alt="Aud">
+                        <div class="gallery-caption"></div>
+                    </div>
+                    <div class="gallery-item" data-category="climbing">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/v4-dyno-orange.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">v4 Dyno</div>
+                    </div>
+                    <div class="gallery-item" data-category="acrobatics">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/front-flip.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Front Flip</div>
+                    </div>
+                    <div class="gallery-item" data-category="acrobatics">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/trapeze.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Flying Trapeze</div>
+                    </div>
+                    <div class="gallery-item" data-category="sports">
+                        <img class="gallery-photo" src="{% static '/static/images/fitness/first-10k.JPEG' %}" alt="RunThrough 10K">
+                        <div class="gallery-caption">First 10K Race</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="climbing">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/v4-jumpstart-orange.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">v4 Jumpstart</div>
+                    </div>
+                    <div class="gallery-item" data-category="sports">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/ballet.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Ballet</div>
+                    </div>
+                    <div class="gallery-item" data-category="climbing">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/v4-tension-orange.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">v4 Tension</div>
+                    </div>
+                    <div class="gallery-item" data-category="misc">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/2-finger-pullup.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">2-Finger Pull Up</div>
+                    </div>
+                    <div class="gallery-item" data-category="sports">
+                        <img class="gallery-photo" src="{% static '/static/images/fitness/tennis.JPEG' %}" alt="Tennis">
+                        <div class="gallery-caption">Tennis</div>
+                    </div>                    
+                    <div class="gallery-item" data-category="climbing">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/v5-overhang-blue.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">v5 Overhang</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="sports">
+                        <img class="gallery-photo" src="{% static '/static/images/fitness/padel.JPEG' %}" alt="Padel">
+                        <div class="gallery-caption">Padel</div>
+                    </div>
+                    <div class="gallery-item" data-category="misc">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/10kg-pullup.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">10KG Pull Up</div>
+                    </div>
+                    <div class="gallery-item" data-category="aud">
+                        <img class="gallery-photo" src="{% static '/static/images/fitness/aud2.JPEG' %}" alt="Aud">
+                        <div class="gallery-caption"></div>
+                    </div>
+                    <div class="gallery-item" data-category="climbing">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/ice-climbing.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Ice Climbing Workshop</div>
+                    </div>
+                    <div class="gallery-item" data-category="climbing">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/v4-crimpy-black.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">v4 Crimpy</div>
+                    </div>
+                    <div class="gallery-item" data-category="acrobatics">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/backflip.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Back Flip</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="sports">
+                        <img class="gallery-photo" src="{% static '/static/images/fitness/barre.JPEG' %}" alt="Barre">
+                        <div class="gallery-caption">Barre</div>
+                    </div>
+                    <div class="gallery-item" data-category="misc" id="frog-pose-video">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/frog-pose.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Frog Pose</div>
+                    </div>
+                    <div class="gallery-item" data-category="climbing">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/v4-red-flex.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">v4 Flexibility</div>
+                    </div>
+                    <div class="gallery-item" data-category="misc">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/35kg-fingers.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">35KG Finger Pull</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="misc">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/handstand.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Handstand</div>
+                    </div>
+                    <div class="gallery-item" data-category="climbing">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/dws-thailand.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Deep Water Solo Thailand</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="climbing">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/v3-dyno-blue.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">v3 Dyno</div>
+                    </div>
+                    <div class="gallery-item" data-category="misc">
+                        <img class="gallery-photo" src="{% static '/static/images/fitness/TH-running.JPEG' %}" alt="Run Victoria Park">
+                        <div class="gallery-caption">Tower Hamlets Victoria Park Interview</div>
+                    </div>
+                    <div class="gallery-item" data-category="climbing">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/v2-dyno-red.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">v2 Dyno</div>
+                    </div>
+                    <div class="gallery-item" data-category="sports">
+                        <img class="gallery-photo" src="{% static '/static/images/fitness/badminton.JPEG' %}" alt="Badminton">
+                        <div class="gallery-caption">Badminton</div>
+                    </div>
+                    <div class="gallery-item" data-category="acrobatics">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/backhandspring.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Backhandspring</div>
+                    </div>
+                    <div class="gallery-item" data-category="misc">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/fitness/l-sit.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">L-Sit</div>
+                    </div>
+                </div>
+            </div>
+            <div class="fitness-icons-row">
+                <ul class="fitness-icons">
+                <li><a href="https://strava.app.link/4GWCsgyl0Wb"><i class="fa-brands fa-strava"></i></a></li>
+                <li><a href="https://www.instagram.com/audrey_musclemami/"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+            </div>
+            <!-- <div class="hiking-section">
+                <h2>Outdoors</h2>
+                <p class="subtitle">
+                    <span class="light">
+                        Nature as therapy.
+                    </span>
+                <p>
+                    Some of my notable ascents:
+                </p>
+                <ul class="notable-hikes">
+                    <li>
+                        <p>
+                            Mount Rinjani, Indonesia - 3,726m
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Mount Olympus, Greece - 2,917m
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Minor hikes in Hong Kong, Korea, Swiss Alps, and Belgian Ardennes, and more
+                        </p>
+                    </li>
+                </ul>
+                <p>
+                    My next goal is Kilimanjaro, Tanzania - 5,895m
+                </p>
+            </div> -->
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+<!-- align the hiking section into three equal sections horizontally, add a photo for each hike first -->
+<!-- when this is done, in place of the photo add a scrollable gallery -->

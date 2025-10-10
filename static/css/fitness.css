@@ -1,0 +1,344 @@
+/* 
+-------------------------------------------
+Desktop layout 
+-------------------------------------------
+*/
+
+/* 
+------
+Alignments
+------
+*/
+
+/* introduction section */
+.main-container .fitness-container .fitness-introduction h1 {
+    margin-bottom: 0;
+    text-align: left;
+    color: var(--light-pink);
+}
+
+.main-container .fitness-container .fitness-introduction p.subtitle, .main-container .fitness-container .fitness-introduction-text {
+    text-align: left;
+    color: var(--light-pink);
+}
+
+/* hiking section */
+.main-container .fitness-container .hiking-section h2 {
+    margin-bottom: 0;
+    text-align: left;
+    color: var(--light-pink);
+}
+
+.main-container .fitness-container .hiking-section p.subtitle, .main-container .fitness-container .hiking-section p {
+    text-align: left;
+    color: var(--light-pink);
+}
+
+/* 
+------
+Text Styling
+------
+*/
+
+p.fitness-introduction-text {
+    margin: var(--standard-margin-y) auto;
+    font-size: var(--medium-heading-font);
+    line-height: var(--medium-heading-font);
+    font-weight: 600;
+    font-family: 'Oswald', 'Montserrat', sans-serif;
+}
+
+/* List */
+ul.notable-hikes {
+    padding-left: var(--xsmall-padding-y);
+    margin: 0 auto;
+    list-style: none;
+    list-style-position: inside;
+
+    /* centering the list */
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.notable-hikes li {
+    margin-bottom: 0.25rem;    
+    padding-left: 0.75rem;
+
+    /* centering the list */
+    position: relative;
+    /* display: flex;
+    align-items: center;
+    text-align: center; */
+}
+
+/* List Item Decoration */
+.notable-hikes li::before {
+    content: "•"; /* The character for the bullet */
+    color: var(--light-pink) !important; 
+    font-size: 1.1em; 
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    /* centering the list */
+    /* white-space: nowrap;
+    margin-right: 0.25rem; */
+}
+
+/* 
+------
+Fitness icons
+------
+*/
+
+/* Icons positioning */
+.fitness-icons-row {
+    width: 100%;
+    text-align: center;
+    margin-top: var(--standard-margin-y);
+}
+
+ul.fitness-icons {
+    padding-left: 0px; /* removes the padding so that the list is centered */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.fitness-icons li {
+    display: inline-block;
+    position: relative;
+    list-style: none;
+    margin: 0 0;
+    padding-left: 5px; /* padding inbetween the icons */
+    padding-right: 5px; /* padding inbetween the icons */
+}
+
+ul.fitness-icons li a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--bg-full-page);
+    background-color: var(--light-pink);
+    border: 1px solid;
+    border-color: var(--light-pink);
+    border-radius: 10%;
+    transition: all .5s;
+}
+
+/* hover effect */
+ul.fitness-icons li a:hover {
+    background-color: var(--hover-dark);
+    color: #fff;
+}
+
+/* 
+------
+Fitness Gallery Styles 
+------
+*/
+
+.fitness-gallery-section{
+    margin: 0 0;
+    padding: var(--standard-padding-y) var(--standard-padding-x);
+
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25); 
+    background-color: var(--lavender-blush);
+}
+
+.fitness-gallery-section h1 {
+    color: var(--dark-fuchsia);
+    font-size: var(var(--small-heading-font), 3.5vw, var(--large-heading-font));
+    text-align: right;
+}
+
+.main-container .fitness-container .fitness-gallery-section p {
+    text-align: right;
+    color: var(--dark-fuchsia);
+}
+
+.fitness-container .fitness-gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Creates equal-width columns */
+    gap: var(--standard-gap); 
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.fitness-container .gallery-item {
+    position: relative;
+
+    /* force 9:16 aspect ratio */
+    height: 0;
+    padding-bottom: 177.77%;
+
+    overflow: hidden; /* Ensures the image doesn't break out of the container */
+    border-radius: 8px;
+    /* border: 1px solid var(--dark-fuchsia); */
+    cursor: pointer;
+}
+
+.fitness-container .gallery-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* caption styling */
+.fitness-container .gallery-caption {
+    /* Positioning */
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Start at the center */
+    transform: translateX(-50%) translateY(100%); /* Center horizontally and push down initially */
+    
+    /* Appearance */
+    width: 100%;
+    padding: var(--medium-padding-y) var(--small-padding-x);
+    color: var(--light-pink);
+    text-align: center;
+    font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-style: italic;
+
+    pointer-events: none; /* allows for playback controls to pass through the overlay */
+    
+    /* Hover Transition */
+    opacity: 0; /* Hidden by default */
+    transition: all 0.3s ease; 
+    z-index: 50; 
+}
+
+/* hover effects */
+.fitness-container .gallery-item:hover .gallery-photo {
+    transform: scale(1.05); 
+}
+
+.fitness-container .gallery-item:hover .gallery-caption {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.fitness-container .gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--hover-dark-transparent);
+    opacity: 0; /* Hidden by default */
+    z-index: 10;
+    pointer-events: none; /* allows for playback controls to pass through the overlay */
+    transition: opacity 0.3s ease;
+}
+
+.fitness-container .gallery-item:hover::before {
+    opacity: 1; /* Shows the transparent overlay setup above*/
+}
+
+/* gallery item specific rules */
+.fitness-container .gallery-item:first-child .gallery-photo {
+    object-fit: fill;
+}
+
+.fitness-container .gallery-item:nth-child(6) .gallery-photo video {
+    object-fit: contain; 
+}
+
+/* .fitness-container #fibro-video .gallery-photo {
+    object-fit: fill!important;
+}
+
+.fitness container #frog-pose-video .gallery-photo {
+    object-position: 25% 50%!important;
+}
+ */
+
+
+/* 
+------
+Gallery Sort Buttons
+------
+*/
+
+.fitness-container .gallery-filter-buttons {
+    text-align: right;
+    margin: var(--small-margin-y) var(--small-margin-x);
+}
+
+.fitness-container .filter-btn {
+    background-color: var(--lavender-blush);
+    color: var(--dark-fuchsia);
+    border: 1px solid var(--dark-fuchsia);
+    padding: 8px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 8px;
+}
+
+.fitness-container .filter-btn:hover {
+    background-color: var(--hover-dark);
+    color: var(--light-pink);
+}
+
+.fitness-container .filter-btn.active {
+    background-color: var(--hover-dark);
+    color: var(--light-pink);
+}
+
+/* hide the photos */
+.fitness-container .gallery-item.hidden {
+    display: none !important; 
+}
+
+/* 
+-------------------------------------------
+Small Screen Compatibility
+-------------------------------------------
+*/
+
+
+@media (max-width: 991px) {
+    .fitness-gallery {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .fitness-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 575px) {
+    .fitness-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .gallery-item:hover .gallery-photo {
+        transform: scale(1.02);
+    }
+}

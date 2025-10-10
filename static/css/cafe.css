@@ -1,0 +1,193 @@
+/* 
+-------------------------------------------
+Desktop layout 
+-------------------------------------------
+*/
+
+p.cafe-introduction-text, p.matcha-introduction-text {
+    margin: var(--standard-margin-y) auto;
+    font-size: var(--medium-heading-font);
+    line-height: var(--medium-heading-font);
+    font-weight: 600;
+    font-family: 'Oswald', 'Montserrat', sans-serif;
+    color: var(--light-pink);
+}
+
+.main-container .cafe-container .cafe-introduction h1 {
+    margin-bottom: 0;
+    color: var(--light-pink);
+}
+
+/* .cafe-introduction p, .cafe-introduction .bold, .matcha-introduction-text p {
+    color: var(--light-pink);
+} */
+
+.cafe-introduction p.subtitle {
+    margin-top: 0;
+    color: var(--light-pink);
+}
+
+/* list alignments */
+ul.notable-drinks {
+    padding-left: var(--xsmall-padding-y);
+    margin: 0;
+    list-style: none;
+    list-style-position: inside;
+}
+
+.notable-drinks li {
+    margin-bottom: 0.25rem;
+    position: relative;
+    padding-left: 0.75rem;
+    color: var(--light-pink);
+}
+
+/* list item decoration */
+.notable-drinks li::before {
+    content: "•"; /* The character for the bullet */
+    color: var(--light-pink) !important; 
+    font-size: 1.1em; 
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+/* 
+------
+Cafe Gallery Styles 
+------
+*/
+
+.cafe-gallery-section{
+    margin: 0 0;
+    padding: var(--standard-padding-y) var(--standard-padding-x);
+
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25); 
+    background-color: var(--lavender-blush);
+}
+
+.cafe-gallery-section h1 {
+    color: var(--dark-fuchsia);
+    font-size: var(var(--small-heading-font), 3.5vw, var(--large-heading-font));
+    text-align: right;
+}
+
+.main-container .cafe-container .cafe-gallery-section p {
+    text-align: right;
+    color: var(--dark-fuchsia);
+}
+
+
+.cafe-container .cafe-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates equal-width columns */
+    gap: var(--standard-gap); 
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cafe-container .gallery-item {
+    position: relative;
+    overflow: hidden; /* Ensures the image doesn't break out of the container */
+    border-radius: 8px;
+    /* border: 1px solid var(--dark-fuchsia); */
+    cursor: pointer;
+}
+
+.cafe-container .gallery-photo {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* caption styling */
+.cafe-container .gallery-caption {
+    /* Positioning */
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Start at the center */
+    transform: translateX(-50%) translateY(100%); /* Center horizontally and push down initially */
+    
+    /* Appearance */
+    width: 100%;
+    padding: var(--medium-padding-y) var(--small-padding-x);
+    color: var(--light-pink);
+    text-align: center;
+    font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-style: italic;
+
+    pointer-events: none; /* allows for playback controls to pass through the overlay */
+    
+    /* Hover Transition */
+    opacity: 0; /* Hidden by default */
+    transition: all 0.3s ease; 
+    z-index: 50; 
+}
+
+/* hover effects */
+.cafe-container .gallery-item:hover .gallery-photo {
+    transform: scale(1.05); 
+}
+
+.cafe-container .gallery-item:hover .gallery-caption {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.cafe-container .gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--hover-dark-transparent);
+    opacity: 0; /* Hidden by default */
+    z-index: 10;
+    pointer-events: none; /* allows for playback controls to pass through the overlay */
+    transition: opacity 0.3s ease;
+}
+
+.cafe-container .gallery-item:hover::before {
+    opacity: 1; /* Shows the transparent overlay setup above*/
+}
+
+
+/* 
+-------------------------------------------
+Small Screen Compatibility
+-------------------------------------------
+*/
+
+
+@media (max-width: 991px) {
+    .cafe-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .cafe-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 575px) {
+    .cafe-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .cafe-item:hover .gallery-photo {
+        transform: scale(1.02);
+    }
+}
