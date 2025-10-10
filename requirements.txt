@@ -1,0 +1,10 @@
+boto==2.49.0
+Cactus==3.3.3
+colorama==0.4.5
+colorlog==6.9.0
+Django==1.6.11
+django-markwhat==1.6.2
+keyring==5.7.1
+markdown2==2.4.13
+six==1.17.0
+tornado==6.1
