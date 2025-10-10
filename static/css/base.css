@@ -1,0 +1,786 @@
+/* 
+-------------------------------------------
+Organisation 
+-------------------------------------------
+*/
+
+/* 
+-------------------------------------------
+
+Contents:
+
+Media Queries
+
+1. Base and Utility Classes
+    Root Variables
+    Text Styles
+    Alignments
+        General
+        Header and Footer
+        Main Content Area
+    Small Screen Compatibility
+2. Header styles
+    Alignment
+    Text
+    Responsive Menu Bars, Small Screen Compatibility
+3. Footer styles
+    Alignment
+    Text
+    Small Screen Compatibility
+4. Deprecated Sections
+
+-------------------------------------------
+*/
+
+/* 
+-------------------------------------------
+
+Media Queries
+
+@media (max-width: 1661px) {}
+
+@media (max-width: 1341px) {}
+
+@media (max-width: 991px) {}
+
+@media (max-width: 767px) {}
+
+@media (max-width: 575px) {}
+
+-------------------------------------------
+*/
+
+/* 
+-------------------------------------------
+Base and Utility Classes 
+-------------------------------------------
+*/
+
+:root {
+    --standard-margin-x: 2.5rem;
+    --medium-margin-x: 1rem;
+    --small-margin-x: 0.75rem;
+    --xsmall-margin-x: 0.5rem;
+
+    --standard-margin-y: 2.5rem;
+    --medium-margin-y: 1rem;
+    --small-margin-y: 0.75rem;
+    --xsmall-margin-y: 0.5rem;
+
+    --standard-padding-x: 2.5rem;
+    --medium-padding-x: 1rem;
+    --small-padding-x: 0.75rem;
+    --xsmall-padding-x: 0.5rem;
+
+    --standard-padding-y: 2.5rem;
+    --medium-padding-y: 1rem;
+    --small-padding-y: 0.75rem;
+    --xsmall-padding-y: 0.5rem;
+    --xxsmall-padding-y: 0.125rem;
+
+    --standard-gap: 1.5rem;
+    --medium-gap: 1.0rem;
+    --small-gap: 0.5rem;
+
+    --standard-header-size: 80px;
+    --small-header-size: 40px;
+    --standard-footer-size: 110px;
+    --small-footer-size: 70px;
+
+    /* Colours */
+    --bg-full-page: #C43670;
+    --bg-header: rgba(255, 197, 211, 0.15); /* #ffc5d3 */
+ 
+
+    --bg-grid-light: #f7f7f7;
+    
+    --lavender-blush: #fff1f4;
+    --light-pink: #F0CCDF;
+    --pastel-pink: #FECDDA;
+    --dark-fuchsia: #4D0421;
+
+    --hover-dark: #a20f49;
+    --hover-dark-transparent: rgba(162, 15, 73, 0.15); /* # A20F49*/
+
+    /* Not in Use */
+    --bg-light: #ffe3e9;
+    --bg-dark: #432C4A;
+
+    /* Text */
+    --text-light: #ffe3e9;
+    --text-dark: #482728;
+    --text-black: #212529;
+    --text-black-light: #4a4a4a;
+
+    --standard-font-family: 'Montserrat';
+
+    --large-heading-font: 3.5rem;
+    --medium-heading-font: 2.5rem;
+    --small-heading-font: 1.5rem;
+    --xsmall-heading-font: 1.1rem;
+    --xxsmall-heading-font: 0.8rem;
+
+}
+
+/* 
+------
+Text Styles
+------
+*/
+
+/* Headings */
+h1 {
+    font-size: var(--large-heading-font);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-black);
+}
+
+h2 {
+    font-size: var(--medium-heading-font);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-black);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Paragraphs */
+p.subtitle {
+    font-size: 1.125rem;
+    margin-top: 0.0rem;
+    color: var(--text-black);
+    margin-bottom: 1rem;
+}
+
+p {
+    line-height: 1.25rem;
+    color: var(--text-black);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+p.linespaced {
+    line-height: 1.5em;
+    color: var(--text-black);
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Span - Classes */
+.bold {
+    font-weight: 600;
+    color: var(--text-black);
+}
+
+.light {
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: var(--text-black-light);
+}
+
+.spaced-italics {
+    letter-spacing: 0.75px;
+    font-style: italic;
+}
+
+/* Links and Effects */
+a {
+    color: var(--text-black);
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: var(--hover-dark);
+}
+
+/* 
+------
+Alignments
+------
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; /* Ensures the body is at least the height of the viewport */
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--bg-full-page);
+}
+
+/* Header and Footer */
+header, footer {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    outline: 0;
+    
+    font-family: var(--standard-font-family, sans-serif);
+}
+
+/* Main Content Area */
+main {
+    margin-top: calc(var(--standard-header-size) + 40px); 
+    flex-grow: 1; 
+
+    padding-right: var(--standard-padding-x, 2.5rem);
+    padding-left: var(--standard-padding-x, 2.5rem);
+    /* padding-top: var(--standard-padding-y, 0.5rem); set the top padding smaller as the pages usually start with a heading */
+    padding-bottom: var(--standard-padding-y, 2.5rem);
+
+    font-family: var(--standard-font-family, sans-serif);
+}
+
+.main-container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* 
+------
+Small Screen Compatibility
+------
+*/
+
+@media (max-width: 1661px) {
+
+}
+
+@media (max-width: 1341px) {
+
+}
+
+@media (max-width: 991px) {
+    main {
+        margin-top: calc(var(--small-header-size) + 30px); /* Adjust based on header height (40px+30px) */
+
+        padding-right: var(--medium-padding-x);
+        padding-left: var(--medium-padding-x);
+        padding-top: var(--xxsmall-padding-y);
+        padding-bottom: var(--medium-padding-y);
+
+    }
+}
+
+@media (max-width: 767px) {
+    main {
+        padding-right: var(--small-padding-x);
+        padding-left: var(--small-padding-x);
+        padding-top: var(--xxsmall-padding-y);
+        padding-bottom: var(--small-padding-y);
+
+    }
+}
+
+@media (max-width: 575px) {
+    main {
+        padding-right: var(--xsmall-padding-x);
+        padding-left: var(--xsmall-padding-x);
+        padding-top: var(--xxsmall-padding-y);
+        padding-bottom: var(--xsmall-padding-y);
+    }
+}
+
+/* 
+-------------------------------------------
+Header styles 
+-------------------------------------------
+*/
+
+/* General Alignment */
+.header-area {
+    position: fixed;
+    height: var(--standard-header-size);
+    width: calc(100% - 2 * var(--standard-padding-y)); 
+    left: 50%; 
+    transform: translateX(-50%); 
+
+    background: var(--bg-header) !important;
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+
+    /* Positioning  & Effects */
+    z-index: 1000; /* places it on top of other elements */
+    -webkit-transition: all .5s ease 0s;
+    -moz-transition: all .5s ease 0s;
+    -o-transition: all .5s ease 0s;
+    transition: all .5s ease 0s;
+
+    /* Floating Effect */
+    top: var(--medium-padding-y); 
+    border-radius: 12px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25); 
+
+    /* Internal */
+    padding: 0 calc(var(--standard-padding-x) * 2);
+}
+
+.header-area.header-sticky {
+    min-height: var(--standard-header-size);
+}
+
+/* Internal Alignment */
+.header-area .hf-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+    width: 100%; 
+    max-width: none;
+
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: var(--small-padding-x);
+    padding-left: var(--small-padding-x);
+}
+
+.header-area .main-nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.header-area .main-nav .nav {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+/* List Alignment */
+.header-area .main-nav .nav li {
+    display: inline-block;
+    position: relative;
+
+    margin: 0 0;
+    padding-left: var(--standard-padding-x); /* padding in between the nav items */
+    padding-right: var(--standard-padding-x); /* padding in between the nav items */
+
+    list-style: none;
+}
+
+/* 
+------
+Text 
+------
+*/
+
+/* Title */
+.header-area .main-nav h1.header-title {
+    flex-shrink: 0;
+    margin: 0px;
+    margin-right: auto;
+
+    font-family: var(--standard-font-family);
+    font-size: var(--small-heading-font); 
+    /* font-size: clamp(var(--xsmall-heading-font), var(--small-heading-font), var(--small-heading-font)); */
+    line-height: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase; 
+
+    color: var(--light-pink);
+}
+
+/* List Items */
+.header-area .main-nav .nav li a {
+    display: block;
+    border: transparent;
+
+    font-size: var(--xsmall-heading-font);
+    /* font-size: clamp(var(--xxsmall-heading-font), var(--xsmall-heading-font), var(--xsmall-heading-font)); */
+    height: 40px;
+    line-height: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: var(--light-pink);
+
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+/* Hover Effect */
+.header-area .main-nav .nav li a:hover {
+    color: var(--hover-dark);
+}
+
+/* 
+------
+Responsive Menu Bars, Small Screen Compatibility
+------
+*/
+
+/* Hides the Menu Span on Default */
+.header-area .main-nav .menu-trigger {
+    display: none;
+}
+
+@media (max-width: 1661px) {
+    /* List Alignment */
+    .header-area .main-nav .nav li {
+        padding-left: calc(var(--standard-padding-x) * 2/3); /* padding in between the nav items */
+        padding-right: calc(var(--standard-padding-x) * 2/3); /* padding in between the nav items */
+    }
+}
+
+@media (max-width: 1341px) {
+    .header-area {
+        padding: 0 var(--standard-padding-x);
+    }
+}
+
+@media (max-width: 991px) {
+    /* Header Size */
+    .header-area, .header-area.header-sticky {
+        min-height: var(--small-header-size);
+        height: var(--small-header-size) !important;
+    }
+
+    /* Internal Alignment */
+    .header-area {
+        padding-right: var(--medium-padding-x);
+        padding-left: var(--medium-padding-x);
+    }
+    .header-area .main-nav {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+    }
+
+    /* Title */
+    .header-area .main-nav h1.header-title {
+        margin: 0;
+
+        font-size: var(--xsmall-heading-font); 
+        line-height: var(--small-header-size); 
+    }
+
+    /* 
+    ---
+    Hamburger Menu Dropdown
+    ---
+    */
+
+    .header-area .main-nav .nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+
+        width: 100%;
+        top: var(--small-header-size);
+        left: 0;
+
+        margin: 0;
+        padding: 10px 0;
+
+        text-align: center;
+ 
+        /* Positioning  & Effects */
+        z-index: 950; 
+        background-color: rgba(255, 197, 211, 0.10); /* #ffc5d3 */
+        backdrop-filter: blur(2.5px);
+        -webkit-backdrop-filter: blur(2.5px);
+
+        /* Floating Effect */
+        top: calc(var(--small-header-size) + var(--medium-padding-y));
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.25); 
+    }
+
+    /* This is the key state that will be toggled by JavaScript */
+    .header-area .main-nav.active .nav {
+        display: flex; /* Makes the dropdown menu visible */
+    }
+    
+    /* Hides the "Menu" span on mobile */
+    .header-area .main-nav .menu-trigger span {
+        display: none;
+    }
+
+    /* Make the Hamburger Icon visible */
+    .header-area .main-nav .menu-trigger {
+        display: block;
+        cursor: pointer;
+
+        line-height: var(--small-header-size); 
+        text-decoration: none; 
+    }
+
+    /* Hamburger Icon */
+    .header-area .main-nav .menu-trigger i.fa-bars {
+        display: block; /* Makes the icon visible */
+        cursor: pointer;
+
+        font-size: var(--xsmall-heading-font);
+        color: var(--text-black);
+    }
+
+    /* List Items */
+    .header-area .main-nav .nav li a {
+        height: 30px;
+        line-height: 30px;
+    }
+
+    /* Hover Effect */
+    .header-area .main-nav .menu-trigger i.fa-bars:hover {
+        color: var(--hover-dark);
+    }
+}
+
+@media (max-width: 767px) {
+    .header-area {
+        padding-right: var(--small-padding-x);
+        padding-left: var(--small-padding-x);
+    }
+
+    .header-area .main-nav h1.header-title {
+        font-size: 15px;
+        line-height: 40px;
+    }
+}
+
+@media (max-width: 575px) {
+    .header-area .main-nav {
+        padding-right: var(--xsmall-padding-x);
+        padding-left: var(--xsmall-padding-x);
+    }
+}
+
+/* 
+-------------------------------------------
+Footer styles 
+-------------------------------------------
+*/
+
+/* General Alignment */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--standard-footer-size);
+
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+    /* Positioning  & Effects */
+    z-index: 1000;
+    -webkit-transition: all .5s ease 0s;
+    -moz-transition: all .5s ease 0s;
+    -o-transition: all .5s ease 0s;
+    transition: all .5s ease 0s;
+}
+
+/* Internal Alignment */
+footer .hf-container {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Footer Icons */
+footer ul.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 0px;
+}
+
+/* List Alignment */
+footer ul.social-icons li {
+    display: inline-block;
+    position: relative;
+    list-style: none;
+    margin: 0 0;
+
+    padding-left: var(--small-gap); /* padding inbetween the icons */
+    padding-right: var(--small-gap); /* padding inbetween the icons */
+}
+
+/* List Style */
+footer ul.social-icons li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+
+    font-size: var(--xsmall-heading-font);
+    line-height: 40px;
+
+    border-radius: 50%;
+    transition: all .5s;
+
+    background-color: var(--light-pink);
+    color: var(--bg-full-page);
+
+}
+
+/* Hover Effect */
+footer ul.social-icons li a:hover {
+    background-color: var(--hover-dark);
+    color: #ffffff;
+}
+
+/* Text */
+p.footer-text {
+    margin-top: 2.5px;
+    margin-bottom: 10px;
+
+    text-align: center;
+    color: var(--text-light-pink);
+}
+
+p.footer-addition {
+    margin: 2.5px 0px; /* top and bottom margin, no margins on the side */
+
+    text-align: center;
+    font-weight: 200;
+    font-size: 0.75rem;
+    letter-spacing: 0.35px;
+
+    color: var(--text-black);
+}
+
+/* 
+------
+Small Screen Compatibility
+------
+*/
+
+@media (max-width: 1661px) {
+
+}
+
+@media (max-width: 1341px) {
+
+}
+
+@media (max-width: 991px) {
+    /* Alignment */
+    footer {
+        height: var(--small-footer-size) !important;
+        min-height: var(--small-footer-size) !important;
+        padding: 1.25px 0; /* Adds padding for better spacing */
+        margin: 0;
+    }
+
+    /* Footer Icons */
+    footer ul.social-icons {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+
+    /* List Style */
+    footer ul.social-icons li a {       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 0.65rem;
+    }
+
+    /* Text */
+    p.footer-text {
+        margin-top: 1.25px;
+        margin-bottom: 5px;
+
+        font-size: 0.65rem;
+    }
+
+    p.footer-addition {
+        margin-top: 1.25px;
+        margin-bottom: 2.5px;
+
+        font-size: 0.65rem;
+
+        color: var(--text-black);
+    }
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 575px) {
+
+}
+
+
+/* 
+-------------------------------------------
+DEPRECATED SECTIONS 
+-------------------------------------------
+*/
+
+/* Deprecated Active Link Effect */
+/*
+.header-area .main-nav .nav li a.active {
+  color: #7a6ad8;
+}
+*/
+
+/* Deprecated Dropdown Menu */
+/* 
+.header-area .main-nav .nav li.has-sub ul {
+  position: absolute;
+  width: 200px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
+  z-index: 99;
+  top: 60px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease 0s;
+}
+
+.header-area .main-nav .nav li.has-sub:hover ul {
+  opacity: 1;
+  visibility: visible;
+  top: 40px;
+}
+
+.header-area .main-nav .nav li.has-sub ul li {
+  display: block;
+  line-height: 1;
+}
+
+.header-area .main-nav .nav li.has-sub ul li a {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #eee;
+  padding: 0 15px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.header-area .main-nav .nav li.has-sub ul li:last-child a {
+  border-bottom: none;
+}
+
+.header-area .main-nav .nav li.has-sub ul li a:hover {
+  background-color: #f4f7f8;
+  color: #7a6ad8;
+}  
+*/

@@ -1,10 +1,85 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block body %}
-<div class="jumbotron">
-  <div class="container">
-    <h1>Make this your about page!</h1>
-    <p>Use this page to tell your visitors about you. Or scrape it, and make a new one!</p>
-  </div>
-</div>
+{% block content %}
+
+<section class="about-section" id="about">
+    <div class="main-container">
+        <div class="about-content-row">
+            <div class="left-content">
+                <h1>About Me</h1>
+                <p class="subtitle">
+                    <span class="light">
+                        Fragments of my world.
+                    </span>
+                </p>
+                <div class="personality-traits-container">
+                    <p class="personality-traits">Key Traits</p>
+                    <ul class="personality-icons">
+                        <li data-tooltip="Curiosity"><i class="fa-solid fa-magnifying-glass"></i></li>
+                        <li data-tooltip="Resourceful"><i class="fa-solid fa-gears"></i></li>
+                        <li data-tooltip="Continuous Improvement"><i class="fa-solid fa-arrow-trend-up"></i></li>
+                        <li data-tooltip="Need for New Challenges"><i class="fa-solid fa-person-hiking"></i></li>
+                        <li data-tooltip="Care and Consideration"><i class="fa-solid fa-hand-holding-heart"></i></li>
+                        <div class="center-tooltip-text" id="personality-center-text"></div>
+                    </ul>
+                </div>
+                <p class="personality-presentation">
+                    How I bring these to life...
+                </p>
+                <ul class="personality-presentation-list">
+                    <li>
+                        <p>
+                            <span class="bold">Professionally</span>, 
+                            I'd describe myself as a multi-skilled hybrid professional and able to pick up new things rapidly due to my curiosity and resourcefulness. 
+                            I am proactive in utilising all available resources and doing my research, including leaning on my connections, network and sharing knowledge. 
+                            <br><br>
+                            → Have a look at <a href="{% url '/home.html' %}">Home</a> for a brief professional overview.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span class="bold">Personally</span>, 
+                            I love discovering and experimenting with new foods and drinks through dining and cafe-hopping throughout London, globally throughout travels and my multi-cultural network, 
+                            as well as preparing them myself at home. 
+                            <br><br>
+                            → Have a look at <a href="{% url '/cafe.html' %}">Cafe</a> for some recent beverages I've made.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span class="bold">Health-wise</span>,
+                            I am driven by my need for continuous improvement and search for new challenges.
+                            I often self-describe this as as "doing new side-quests". 
+                            Most of these are health related these days as I've always had an overactive immune system as a young child. 
+                            During the past years, I've worked with specialists to work on managing these holistically, for which I found movement to be the most effective. 
+                            I've been most consistent with bouldering during this time and along the way I've picked up several side-quests such as pilates, yoga, gymnastics, running, ballet, badminton, tennis, and the most recent one being flying trapeze! 
+                            <br><br>
+                            → Have a look at <a href="{% url '/fitness.html' %}">Fitness</a> for my progress.
+                        </p>
+                    </li>
+                </ul>
+                <p>
+                    <br>
+                    <span class="spaced-italics">
+                    I approach any situation with care and consideration, whether it be in a professional or personal context 
+                    - the depth of my relationships and network are a testament to this.
+                    </span>
+                    <br><br><br>
+                    Always open to connecting with like-minded people, so feel free to reach out!
+                </p>
+            </div>
+            <div class="right-photo">
+                <img class="about-photo" src="{% static '/static/images/about-photo.JPEG' %}" alt="audrey himantono about photo">
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}
+
+<!-- add countries? -->
+
+<!-- list items, add a title -->
+ <!-- divide up the list items into it's own container and make it flashy with a background each etc -->
+  <!-- the list items can have it's own bucket with background, maybe remove the dots -->

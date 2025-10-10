@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="cafe-section" id="cafe">
+    <div class="main-container">
+        <div class="cafe-container">
+            <div class="cafe-introduction">
+                <h1>Cafe</h1>
+                <p class="subtitle">
+                    <span class="light">
+                        Spreading warmth and love through every cup.
+                    </span>
+                </p>
+                <p class="cafe-introduction-text">
+                    Growing up, I've always loved making and trying different drinks. 
+                    My current fixation is making matchas and experimenting with different flavours, combinations, ratios, and consistencies.
+                </p>
+                <!-- <ul class="notable-drinks">
+                    <li>
+                        <p>
+                            <span class="bold">Tea</span> - coming from an Asian and Chinese background where tea is central to our culture.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span class="bold">Coffee</span> - my love for coffee started a bit before the COVID lockdowns, 
+                            and I spent a lot of time brewing different beans at home. 
+                            I've worked with commercial coffee machines as well during my time working at a restaurant.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span class="bold">Matcha</span> - in the past couple years, I rediscovered my love for matcha and other ground-powder based beverages such as hojicha and kinako.
+                        </p>
+                    </li>
+                </ul> -->
+            </div>
+            <!-- <div class="matcha-section">
+                <p class="matcha-introduction-text">
+                    My current fixation is making matcha and experimenting with different flavours, combinations, ratios, and consistencies.
+                </p>
+            </div> -->
+            <div class="cafe-gallery-section">
+                <h1>Gallery</h1>
+                <p>
+                    Have a look at some of the vlogs and matchas
+                </p>
+                <div class="cafe-gallery">
+                    <div class="gallery-item">
+                        <img class="gallery-photo" src="{% static '/static/images/cafe/matcha-cheesecake.JPEG' %}" alt="Matcha Cheesecake">
+                        <div class="gallery-caption"></div>
+                    </div>
+                    <div class="gallery-item">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/cafe/foam-drip.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Foam Drip</div>
+                    </div>
+                    <div class="gallery-item">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/cafe/microfoam.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Microfoam</div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/cafe/jenki.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Matcha Shot</div>
+                    </div>                    
+                    <div class="gallery-item">
+                        <img class="gallery-photo" src="{% static '/static/images/cafe/floating-matcha.JPEG' %}" alt="Floating Matcha">
+                        <div class="gallery-caption">Floating Matcha</div>
+                    </div>
+                    <div class="gallery-item">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/cafe/latte.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Soy Latte</div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/cafe/peach-cold-foam.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Peach Cold Foam</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img class="gallery-photo" src="{% static '/static/images/cafe/matcha-strawberries.JPEG' %}" alt="Matcha Strawberries">
+                        <div class="gallery-caption"></div>
+                    </div>
+                    <div class="gallery-item">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/cafe/teamakers-milo.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Milo Latte</div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img class="gallery-photo" src="{% static '/static/images/cafe/strawberry-matcha.JPEG' %}" alt="Strawberry Matcha">
+                        <div class="gallery-caption">Strawberry Matcha</div>
+                    </div>
+                    <div class="gallery-item">
+                        <video class="gallery-photo" controls loop muted playsinline>
+                            <source src="{% static '/static/images/cafe/blueberry-matcha.MP4' %}" type="video/mp4">
+                        </video>
+                        <div class="gallery-caption">Blueberry Latte</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img class="gallery-photo" src="{% static '/static/images/cafe/matcha-coldfoam.JPEG' %}" alt="Matcha Cold Foam">
+                        <div class="gallery-caption">Matcha Cold Foam</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

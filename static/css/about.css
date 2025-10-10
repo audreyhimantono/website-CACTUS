@@ -1,0 +1,250 @@
+/* 
+-------------------------------------------
+Desktop layout 
+-------------------------------------------
+*/
+
+/* 
+------
+Alignment
+------
+*/
+
+/* general alignment */
+.about-content-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.left-content {
+    flex: 1; /* Allows it to take up the remaining space */
+    max-width: calc(50% - 20px); /* Ensures it doesn't exceed 50% minus the gap */
+    padding-left: var(--xsmall-padding-y);
+    padding-right: calc(var(--xsmall-padding-y) + 20px);
+}
+
+/* left content alignment */
+.main-container .about-content-row .left-content h1 {
+    margin-bottom: 0;
+    text-align: center;
+    color: var(--light-pink);
+}
+
+.main-container .about-content-row .left-content p.subtitle {
+    text-align: center;
+}
+
+/* 
+------
+Personality Traits Section
+------
+*/
+
+.personality-traits-container {
+    color: var(--lavender-blush);
+    border-radius: 12px;
+}
+
+/* icons */
+ul.personality-icons {
+    position: relative; 
+    width: 400px; /* Size of the container */
+    height: 400px;
+    padding: 0;
+    margin: 150px auto 100px; /* Center the circle and add vertical space */
+    /* border: 10px solid #d80a0a;  */
+    border-radius: 50%; 
+    list-style: none; 
+}
+
+
+ul.personality-icons li {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+
+    width: 100px; /* The size of the space the icon occupies */
+    height: 100px;
+
+    margin: -50px 0 0 -50px; /* Shift by half the element's width/height (px/2 = px) */
+}
+
+ul.personality-icons li i {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 100px;
+    color: var(--light-pink);
+    transition: all .5s;
+}
+
+/* hover */
+ul.personality-icons li:hover i {
+    transform: scale(1.1);
+    color: var(--hover-dark);
+}
+
+/* tooltips */
+.center-tooltip-text {
+    /* Position the text exactly in the middle of the ul.personality-icons container */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* Styling */
+    color: var(--light-pink); 
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    max-width: 80%; /* Ensure text doesn't overflow the center */
+    pointer-events: none; /* Prevents text from blocking hover events on icons */
+    
+    /* Visibility and Transition */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* 
+------
+Text Styling
+------
+*/
+
+.left-content p, .left-content a, .left-content .bold {
+    color: var(--light-pink);
+}
+
+.about-section p.personality-traits {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--light-pink);
+}
+
+.about-section p.personality-presentation {
+    font-size: 2rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--light-pink);
+}
+
+/* list alignments */
+ul.personality-presentation-list {
+    padding-left: var(--xsmall-padding-y);
+    margin: 0;
+    list-style: none;
+    list-style-position: inside;
+}
+
+.personality-presentation-list li {
+    margin-bottom: 0.25rem;
+    position: relative;
+    padding-left: 0.75rem;
+}
+
+/* list item decoration */
+.personality-presentation-list li::before {
+    content: "•"; /* The character for the bullet */
+    color: var(--light-pink) !important; 
+    font-size: 1.1em; 
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* 
+------
+Photo Section
+------
+*/
+
+/* full height photo section (desktop only) */
+.right-photo {
+    position: fixed;
+    flex: none; 
+    width: 50%;
+    right: 0;
+    max-width: none;
+    height: auto;
+    top: 0;
+    bottom: 0;
+}
+
+.about-photo {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+    display: block;
+    object-fit: cover;
+}
+
+/* 
+-------------------------------------------
+Small Screen Compatibility
+-------------------------------------------
+*/
+
+@media (max-width: 991px) {
+    /* Alignment */
+    .about-content-row {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .left-content {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .right-photo {
+        position: static;
+        top: auto;
+        bottom: auto;
+        right: auto;
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    /* Photo restyling */
+    .about-photo {
+        height: auto;
+        border: 1px solid #4a4a4a;
+    }
+
+    /* Personality Traits Resizing */
+    ul.personality-icons {
+        width: 250px;
+        height: 250px;
+        margin: 75px auto 50px;
+    }
+
+    ul.personality-icons li{
+        width: 75px;
+        height: 75px;
+        margin: -37.5px 0 0 -37.5px;
+    }
+
+    ul.personality-icons li i{
+        width: 75px;
+        height: 75px;
+        line-height: 75px;
+        font-size: 75px;
+    }
+
+    .center-tooltip-text {
+        font-size: 1.5rem;
+    }
+
+    ul.personality-icons li:hover i {
+    transform: scale(1.05);
+    }
+}

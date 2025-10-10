@@ -1,0 +1,1136 @@
+/* 
+-------------------------------------------
+Organisation 
+-------------------------------------------
+*/
+
+/* 
+-------------------------------------------
+
+Contents:
+
+1. General Alignment
+    Small Screen Compatibility
+2. Introduction Section
+    Alignment
+    Text
+3. Get To Know Me Scroll
+    Hover Effect
+4. Section Alignments
+    Dark Background
+    Light Background
+        Overview
+        Expertise
+        Industries
+        Companies & Education
+        Skills & Contact
+5. Text Styling
+    Overview
+    Expertise
+    Industries
+6. Overview Grid
+    General
+    Individual Item Styling
+    Internal Item Styling
+    Hover Effect
+7. Expertise Grid
+    General
+    Individual Item Styling
+    Internal Item Styling
+    Hover Effect
+8. Industries Grid
+    General
+    Individual Item Styling
+    Internal Item Styling
+    Hover Effect
+9. Companies & Education Logos
+10. Skills Logos
+
+-------------------------------------------
+*/
+
+/* 
+-------------------------------------------
+General Alignment
+-------------------------------------------
+*/
+
+.home-section {
+    /* Set a negative margin to counteract the padding on the <main> element. */
+    margin-right: calc(var(--standard-padding-x) * -1);
+    margin-left: calc(var(--standard-padding-x) * -1);
+}
+
+.home-section > .main-container {
+    width: auto; 
+    max-width: none;
+
+    padding: 0; 
+}
+
+/* 
+------
+Small Screen Compatibility
+------
+*/
+
+@media (max-width: 1661px) {}
+
+@media (max-width: 1341px) {}
+
+@media (max-width: 991px) {
+    main .home-section .home-introduction {
+        margin-top: calc((var(--small-header-size) + 30px) * -1); /* Negative adjustment based on header height (40px+30px) */
+    }
+
+    .home-introduction {
+        padding-top: calc((var(--small-header-size) + 30px) + var(--medium-padding-y)); /* Header + Buffer*/
+        padding-bottom: var(--medium-padding-y);
+    }
+}
+
+@media (max-width: 767px) {
+    .home-introduction {
+        min-height: 70vh; 
+        padding: var(--xsmall-padding-y);
+    }
+}
+
+@media (max-width: 575px) {
+    .home-introduction {
+        min-height: 60vh; 
+        padding: 0.var(--xxsmall-padding-y);
+    }
+}
+
+/* 
+-------------------------------------------
+Introduction Section
+-------------------------------------------
+*/
+
+/* 
+------
+Alignment
+------
+*/
+
+main .home-section .home-introduction {
+    margin-top: calc(var(--standard-header-size) * -1); /* Negative adjustment based on header height */
+}
+
+.home-introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+    width: 100%;
+    min-height: calc(100vh);
+
+    padding-top: var(--standard-header-size); 
+    padding-left: var(--standard-padding-x);
+    padding-right: var(--standard-padding-x);
+
+    background-color: var(--bg-full-page); 
+}
+
+.home-introduction::before {
+    content: '';
+    display: block;
+    flex-grow: 1; 
+}
+
+.home-introduction::after {
+    content: '';
+    display: block;
+    flex-grow: 1; 
+}
+
+/* 
+------
+Text
+------
+*/
+
+.home-introduction h1 {
+    font-family: 'Poller One', sans-serif;
+    font-size: clamp(var(--large-heading-font), 8vw, 8rem);
+    color: var(--light-pink);
+}
+
+.home-introduction p.subtitle {
+    font-family: 'DM Serif Display', serif;
+    font-size: var(--large-heading-font);
+    color: var(--light-pink);
+}
+
+.light {
+    color: var(--light-pink);
+}
+
+.introduction-animation {
+    overflow: hidden;
+}
+
+/* 
+-------------------------------------------
+Get To Know Me Scroll
+-------------------------------------------
+*/
+
+.scroll-down-cta {
+    margin-top: auto; 
+    margin-bottom: 2rem; 
+    
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    color: var(--light-pink); 
+    
+    /* Basic link styling reset */
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 2px solid transparent; /* Initial transparent border for smooth transition */
+    
+    /* Positioning  & Effects */
+    transition: all 0.3s ease; 
+}
+
+.scroll-down-cta i {
+    margin-left: var(--small-gap); /* Space the icon */
+    font-size: var(--ssmall-heading-font);
+}
+
+/* Hover Effect */
+.scroll-down-cta:hover,
+.scroll-down-cta:active,
+.scroll-down-cta:focus {
+    color: var(--hover-dark); 
+    border-bottom: 2px solid var(--hover-dark); 
+}
+
+/* 
+-------------------------------------------
+Section Alignments
+-------------------------------------------
+*/
+/* Overview */
+.overview {
+    width: calc(100% - 2*(var(--standard-padding-x)));
+    top: var(--medium-padding-y);
+    margin: var(--standard-margin-y) var(--standard-margin-x);
+    /* background-color: var(--dark-fuchsia); */
+    text-align: left;
+
+    /* Internal */
+    padding-right: var(--standard-padding-x);
+    padding-left: var(--standard-padding-x);
+    padding-top: var(--standard-padding-y); 
+    padding-bottom: var(--standard-padding-y);
+
+    /* Shadow */
+    /* border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);  */
+}
+
+.overview-text {
+    width: 100%
+}
+
+
+/* Expertise */
+.expertise {
+    width: calc(100% - 2*(var(--standard-padding-x)));
+    top: var(--medium-padding-y);
+    margin: var(--standard-margin-y) var(--standard-margin-x);
+    background-color: var(--lavender-blush);
+    text-align: right;
+
+    /* Internal */
+    padding-right: var(--standard-padding-x);
+    padding-left: var(--standard-padding-x);
+    padding-top: var(--standard-padding-y); 
+    padding-bottom: var(--standard-padding-y);
+
+    /* Shadow */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25); 
+}
+
+/* Industries */
+.industries {
+    width: calc(100% - 2*(var(--standard-padding-x)));
+    top: var(--medium-padding-y);
+    margin: var(--standard-margin-y) var(--standard-margin-x);
+    background-color: var(--lavender-blush);
+
+    /* Internal */
+    padding-right: var(--standard-padding-x);
+    padding-left: var(--standard-padding-x);
+    padding-top: var(--standard-padding-y); 
+    padding-bottom: var(--standard-padding-y);
+
+    /* Shadow */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25); 
+}
+
+
+.industries-wrapper {
+    display: flex;
+}
+
+.industries-wrapper h1 {
+    flex: 0 0 25%;
+}
+
+.industries-grid-2 {
+    flex: 2;
+}
+
+.industries-grid-3 {
+    flex: 3;
+}
+
+/* Companies & Education */
+.companies-education-row {
+    display: flex;
+    align-items: stretch;
+    width: calc(100% - 2*(var(--standard-padding-x)));
+    margin: var(--standard-margin-y) var(--standard-margin-x);
+}
+
+.companies, .education {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    top: var(--medium-margin-y);
+
+    background-color: var(--lavender-blush);
+
+    /* Internal */
+    padding-right: var(--standard-padding-x);
+    padding-left: var(--standard-padding-x);
+    padding-top: var(--standard-padding-y); 
+    padding-bottom: var(--standard-padding-y);
+
+    /* Shadow */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25); 
+}
+
+.companies {
+    margin-right: var(--medium-margin-x);
+}
+
+.education {
+    margin-left: var(--medium-margin-x);
+}
+
+/* Skills & Contact */
+.skills-contact-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: calc(100% - 2*(var(--standard-padding-x)));
+    margin: var(--standard-margin-y) var(--standard-margin-x);
+}
+
+.skills, .contact {
+    flex-direction: column; 
+    top: var(--medium-padding-y);
+
+    /* Internal */
+    padding-right: var(--standard-padding-x);
+    padding-left: var(--standard-padding-x);
+    padding-top: var(--standard-padding-y); 
+    padding-bottom: var(--standard-padding-y);
+}
+
+.skills {
+    display: flex;
+    flex: 0 0 75%;
+    flex-direction: column;
+    margin-right: var(--medium-margin-x);
+
+    background-color: var(--lavender-blush);
+
+    /* Shadow */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25); 
+}
+
+.contact {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin-left: var(--medium-margin-x);
+}
+
+/* 
+-------------------------------------------
+Text Styling
+-------------------------------------------
+*/
+
+/* 
+------
+Overview Text Styling
+------
+*/
+
+.overview h1 {
+    color: var(--light-pink);
+    font-size: var(var(--medium-heading-font), 3.5vw, var(--large-heading-font))
+}
+
+p.overview-text {
+    font-size: var(--medium-heading-font);
+    line-height: var(--medium-heading-font);
+    font-weight: 600;
+    font-family: 'Oswald', 'Montserrat', sans-serif;
+}
+
+.overview p, .overview h4 {
+    color: var(--light-pink);
+    font-weight: 600;
+}
+
+.expertise h1 {
+    color: var(--dark-fuchsia);
+    font-size: var(var(--small-heading-font), 3.5vw, var(--large-heading-font))
+}
+
+.industries h1 {
+    color: var(--dark-fuchsia);
+    font-size: var(var(--medium-heading-font), 3.5vw, var(--large-heading-font))
+}
+
+
+.companies h1 {
+    color: var(--dark-fuchsia);
+    font-size: var(var(--small-heading-font), 3.5vw, var(--large-heading-font))
+}
+
+.education h1 {
+    color: var(--dark-fuchsia);
+    font-size: var(var(--small-heading-font), 3.5vw, var(--large-heading-font))
+}
+
+.skills h1 {
+    color: var(--dark-fuchsia);
+    font-size: var(var(--small-heading-font), 3.5vw, var(--large-heading-font))
+}
+
+.contact h1, .contact p {
+    color: var(--light-pink);
+}
+
+/* 
+-------------------------------------------
+Overview Grid
+-------------------------------------------
+*/
+
+.overview-grid {
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: var(--standard-margin-y); 
+    margin-right: var(--standard-margin-x);
+    margin-left: var(--standard-margin-x);
+
+    gap: var(--standard-gap); 
+}
+
+/* 
+------
+Individual Item Styling
+------
+*/
+
+.overview-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    flex: 1; 
+
+    min-height: 150px; 
+    padding: 1.5rem; 
+
+    /* Positioning  & Effects */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: default; 
+}
+
+/* 
+------
+Internal Item Styling
+------
+*/
+
+.overview-item h4.overview-title {
+    margin-right: clamp(var(--small-heading-font), 2vw, 2rem); 
+    margin-top: auto;
+    margin-bottom: auto;
+
+    font-size: clamp(var(--medium-heading-font), 4vw, 4rem);
+    font-weight: 600;
+    color: var(--text-light); 
+
+    /* NEW: Counter Viewport Setup */
+    display: inline-block; 
+    height: 1.2em; /* Set a fixed height for the viewport window (adjust line-height of digits below) */
+    line-height: 1.2em;
+    overflow: hidden; /* CRITICAL: Hides the digits when they are outside the viewport */
+    position: relative; /* CRITICAL: Context for absolute positioning of sliding spans */
+    vertical-align: middle; 
+}
+
+/* NEW: Style for the sliding number span */
+.overview-item h4.overview-title span {
+    display: block;
+    /* Absolute positioning allows them to stack and move independently */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Apply a smooth transition for the vertical movement */
+    transition: transform 0.1s ease-out; 
+    /* This transition is fast to mimic a digital counter roll */
+}
+
+.overview-item p {
+    font-size: clamp(var(--medium-heading-font), 2.5vw, 2.5rem);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Hover Effect */
+.overview-item:hover {
+    transform: scale(1.05); 
+}
+
+/* 
+------
+Small Screen Compatibility
+------
+*/
+
+
+@media (max-width: 1661px) {
+
+}
+
+@media (max-width: 1341px) {
+    p.overview-text {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    .overview-grid {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        margin-top: var(--medium-margin-y); 
+        margin-right: var(--medium-margin-x);
+        margin-left: var(--medium-margin-x);
+    }
+    
+    .overview-item {
+        flex: 0 0 100%; 
+        min-height: auto; /* Allow height to shrink on mobile */
+    }
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+    p.overview-text {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+    .overview-grid {
+        gap: var(--medium-gap);
+    }
+    
+}
+
+@media (max-width: 575px) {
+    .overview-grid {
+        margin-top: var(--small-margin-y); 
+        margin-right: var(--xsmall-margin-x);
+        margin-left: var(--xsmall-margin-x);
+
+        gap: var(--small-gap);
+    }
+
+    .overview-item h4.overview-title {
+        margin-right: clamp(var(--small-heading-font), 2vw, 2rem); 
+        font-size: clamp(var(--small-heading-font), 3vw, 3rem);
+    }
+
+    .overview-item p {
+        font-size: clamp(var(--small-heading-font), 2vw, 2rem);
+    }
+}
+
+/* 
+-------------------------------------------
+Expertise Grid
+-------------------------------------------
+*/
+
+.expertise-grid {
+    display: flex; 
+    justify-content: space-between; /* Distributes items evenly with space between them */
+
+    margin-top: var(--medium-margin-y); 
+    margin-right: var(--standard-margin-x);
+    margin-left: var(--standard-margin-x);
+
+    gap: var(--standard-gap);
+}
+
+/* 
+------
+Individual Item Styling
+------
+*/
+
+.expertise-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex: 1; 
+
+    min-height: 350px; 
+    padding: 1.5rem; 
+    
+    /* background-color: var(--bg-grid-light); 
+    border: 1px solid var(--pastel-pink);  */
+    border-radius: 8px; 
+
+    /* Positioning  & Effects */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: default; 
+}
+
+/* 
+------
+Internal Item Styling
+------
+*/
+
+.expertise-item h4.expertise-title {
+    max-width: fit-content;
+    margin: 0 auto; 
+    margin-bottom: var(--small-margin-x);
+
+    text-align: center;
+
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--dark-fuchsia);
+}
+
+.expertise-item p:not(.conclusion) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Allows this middle paragraph to take up extra space */
+
+    margin-top: var(--xsmall-margin-y);
+    margin-bottom: var(--xsmall-margin-y);
+
+    font-size: clamp(0.75em, 1rem, 1rem);
+}
+
+.expertise-item p.conclusion {
+    margin-top: auto; 
+    margin-bottom: 0; /* Ensure it stays at the bottom */
+
+    font-size: clamp(var(--xxsmall-heading-font), 1.1vw, var(--xsmall-heading-font));
+    font-style: italic; 
+}
+
+/* Hover Effect */
+.expertise-item:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+
+/* 
+------
+Small Screen Compatibility
+------
+*/
+
+@media (max-width: 1661px) {
+
+}
+
+@media (max-width: 1341px) {
+    .expertise-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-right: var(--medium-margin-x);
+        margin-left: var(--medium-margin-x);
+
+        gap: var(--standard-gap);
+    }
+    
+    .expertise-item {
+        flex: 0 0 calc(50% - var(--standard-gap)/2); /* 50% minus half the gap 1.5rem */
+        min-height: auto;
+    }
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+    .expertise-grid {
+        flex-direction: column;
+        margin-right: 0;
+        margin-left: 0;
+
+        gap: var(--medium-gap);
+    }
+    
+    .expertise-item {
+        flex: 0 0 100%;
+        min-height: auto; 
+    }
+}
+
+@media (max-width: 575px) {
+
+}
+
+/* 
+-------------------------------------------
+Industries Grid
+-------------------------------------------
+*/
+
+.industries-grid-2 {
+    display: flex; 
+    justify-content: space-between; /* Distributes items evenly with space between them */
+    min-width: 0;
+
+    /* Outside */
+    margin-top: var(--medium-margin-y);
+    margin-left: var(--standard-margin-x);
+    
+    /* Between Items */
+    margin-right: calc(var(--standard-gap)/2);
+    gap: var(--standard-gap);
+}
+
+.industries-grid-3 {
+    display: flex; 
+    justify-content: space-between; /* Distributes items evenly with space between them */
+    min-width: 0;
+
+    /* Outside */
+    margin-top: var(--medium-margin-y);
+    margin-right: var(--standard-margin-x);
+
+    /* Between Items */
+    margin-left: calc(var(--standard-gap)/2);
+    gap: var(--standard-gap);
+}
+
+/* 
+------
+Individual Item Styling
+------
+*/
+
+.industries-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex: 1; 
+
+    min-height: 150px;
+    padding: 1.5rem; 
+    
+    /* background-color: var(--bg-grid-light); 
+    border: 1px solid var(--pastel-pink);  */
+    border-radius: 8px; 
+
+    /* Positioning  & Effects */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: default; 
+}
+
+/* 
+------
+Internal Item Styling
+------
+*/
+
+.industries-item h4.industries-title {
+    max-width: fit-content;
+    margin: 0 auto; 
+    margin-bottom: var(--small-margin-x);
+
+    text-align: center;
+
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--dark-fuchsia);
+}
+
+.industries-item p.industries-subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-grow: 1;
+
+    margin: 0;
+    vertical-align: middle;
+    line-height: 1;
+
+    font-size: clamp(var(--xxsmall-heading-font), 1.1vw, var(--xsmall-heading-font));
+    font-style: italic; 
+}
+
+/* Hover Effect */
+.industries-item:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+
+/* 
+------
+Small Screen Compatibility
+------
+*/
+
+@media (max-width: 1661px) {
+    /* Alignment */
+    .industries-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .industries-wrapper h1 {
+        flex: 0 0 calc(1/3 * 100%);
+        font-size: clamp(var(--small-heading-font), 3.5vw, var(--large-heading-font));
+    }
+
+    .industries-grid-2 {
+        flex: 0 0 calc(2/3 * 100%);
+        justify-content: flex-end;
+        margin-right: 0; 
+        margin-left: 0;
+    }
+    
+    .industries-grid-3 {
+        flex: 0 0 100%;
+        margin-left: 0; 
+        margin-right: 0; 
+
+        margin-top: var(--standard-gap); 
+    }
+
+    /* Item Alignments */
+    .industries-grid-2 .industries-item {
+        flex: 0 0 calc((100% - 2rem) / 2);
+    }
+
+    .industries-grid-3 .industries-item {
+        flex: 0 0 calc((100% - 3rem) / 3);
+    }
+}
+
+@media (max-width: 1341px) {
+
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+    /* Alignment */
+    .industries-wrapper {
+        flex-direction: column; 
+    }
+
+    .industries-wrapper h1, .industries-grid-2 {
+        flex: 0 0 100%; 
+        margin-left: 0 !important; 
+        margin-right: 0 !important; 
+        margin-top: 0 !important; 
+
+        margin-bottom: var(--standard-gap); 
+    }
+    
+    .industries-grid-3 {
+        flex: 0 0 100%; 
+        margin-top: 0 !important; 
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Each Industries Item Alignment */
+    .industries-grid-2, .industries-grid-3 {
+        flex-direction: column; 
+        gap: var(--standard-gap); 
+    }
+}
+
+@media (max-width: 575px) {
+
+}
+
+
+/* 
+-------------------------------------------
+Companies & Education Logos 
+-------------------------------------------
+*/
+
+.companies-logos, .education-logos {
+    display: flex;
+    flex: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: var(--standard-gap);
+    gap: 2.5rem;
+}
+
+/* Logo Styling */
+.companies-logos .logo-svg, .education-logos .logo-svg {
+    max-width: 100px; 
+    height: auto;
+    
+    /* Force the SVG color */
+    filter: invert(0) grayscale(100%) brightness(0); 
+    
+    opacity: 0.8; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease;
+}
+
+/* Hover Effect */
+.companies-logos .logo-svg:hover, .education-logos .logo-svg:hover {
+    opacity: 1; 
+    transform: scale(1.05);
+}
+
+/* 
+------
+Small Screen Compatibility
+------
+*/
+
+@media (max-width: 1661px) {
+
+}
+
+@media (max-width: 1341px) {
+    .companies-logos, .education-logos {
+        flex-wrap: wrap; 
+        justify-content: space-around; 
+        gap: var(--standard-gap);
+    }
+    
+    /* 2 by 2 layout */
+    .companies-logos .logo-svg, .education-logos .logo-svg {
+        max-width: calc(50% - var(--standard-gap));
+        flex-basis: calc(50% - var(--standard-gap));
+        margin-bottom: var(--standard-gap); 
+    }
+
+    .companies-education-row h1 {
+        font-size: clamp(var(--small-heading-font), 3.5vw, var(--large-heading-font));
+    }
+}
+
+@media (max-width: 991px) {
+    /* General Alignment */
+    /* Stack .companies and .education sections vertically */
+    .companies-education-row {
+        flex-direction: column;
+        width: 100%; 
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    /* Adjust margins for the stacked sections */
+    .companies, .education {
+        margin-right: var(--standard-margin-y);
+        margin-left: var(--standard-margin-y);
+    }
+
+    .companies {
+        margin-bottom: var(--standard-margin-x);
+    }
+
+    /* Internal Alignment */
+    .companies-logos, .education-logos {
+        flex-wrap: wrap; 
+        justify-content: space-around; 
+        margin-top: var(--standard-gap);
+        width: 100%;
+    }
+
+    .companies-logos .logo-svg, .education-logos .logo-svg {
+        max-width: 100px; 
+        height: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .companies-logos .logo-svg, .education-logos .logo-svg {
+        max-width: 75px; 
+        height: auto;
+    }
+}
+
+@media (max-width: 575px) {
+
+    
+    /* 2 by 2 layout */
+    .companies-logos .logo-svg, .education-logos .logo-svg {
+        max-width: calc(50% - var(--standard-gap));
+        flex-basis: calc(50% - var(--standard-gap));
+        margin-bottom: var(--standard-gap); 
+    }
+}
+
+/* 
+-------------------------------------------
+Skills Logos 
+-------------------------------------------
+*/
+
+.skills-logos {
+    /* New styles for scattering */
+    display: block; 
+    position: relative; 
+    overflow: hidden; /* Keep logos within the boundary if needed */
+
+    margin-top: var(--standard-margin-y); 
+    margin-right: var(--standard-margin-x);
+    margin-left: var(--standard-margin-x);
+
+    min-height: 600px;
+    height: auto;
+}
+
+/* Logo Styling */
+.skills-logos .logo-svg {
+    position: absolute; /* Allows free movement inside the relative parent, for JavaScript(set with top, left, transform) */
+    /* Ensure Scaling */
+    max-width: 6vw; 
+    max-height: 6vw;
+    min-width: 50px;
+    min-height: 50px;
+    height: auto;
+
+    margin: 0.5vw;
+    
+    /* Force the SVG color */
+    /* filter: invert(0) grayscale(100%) brightness(0);  */
+    
+    opacity: 0.8; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease;
+}
+
+/* Hover Effect */
+.skills-logos .logo-svg:hover {
+    opacity: 1; 
+    transform: scale(1.05) !important;
+}
+
+/* 
+------
+Small Screen Compatibility
+------
+*/
+
+@media (max-width: 1661px) {
+    /* Text */
+    .skills-contact-row h1 {
+        font-size: clamp(var(--medium-heading-font), 3.5vw, var(--large-heading-font));
+    }
+    /* Logos Sizing */
+    .skills-logos .logo-svg {
+        min-width: 45px;
+        min-height: 45px;
+    }    
+}
+
+@media (max-width: 1341px) {
+    /* General Alignment */
+    /* Stack .companies and .education sections vertically */
+    .skills-contact-row {
+        flex-direction: column;
+        width: 100%; 
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    /* Adjust margins for the stacked sections */
+    .skills, .contact {
+        margin-right: var(--standard-margin-y);
+        margin-left: var(--standard-margin-y);
+    }
+
+    .skills {
+        margin-bottom: var(--standard-margin-x);
+    }
+
+    /* Logos Section Size */
+    .skills-logos {
+        min-height: 400px;
+        height: auto;
+    }
+
+    /* Text */
+    .skills-contact-row h1 {
+        font-size: clamp(var(--small-heading-font), 3.5vw, var(--large-heading-font));
+    }
+}
+
+@media (max-width: 991px) {
+    /* Logos Section Size */
+    .skills-logos {
+        min-height: 350px;
+        height: auto;
+    }
+
+    /* Logos Sizing */
+    .skills-logos .logo-svg {
+        min-width: 40px;
+        min-height: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 575px) {
+    /* Logos Sizing */
+    .skills-logos .logo-svg {
+        min-width: 30px;
+        min-height: 30px;
+    }
+}
