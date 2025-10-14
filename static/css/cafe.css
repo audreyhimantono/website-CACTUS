@@ -94,7 +94,7 @@ Cafe Gallery Styles
     border-radius: 8px;
     /* border: 1px solid var(--dark-fuchsia); */
     cursor: pointer;
-    aspect-ratio: 4 / 3; 
+    aspect-ratio: 3 / 4; 
 }
 
 .cafe-container .gallery-photo {
