@@ -82,7 +82,7 @@ Cafe Gallery Styles
 
 .cafe-container .cafe-gallery {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* Creates equal-width columns */
+    grid-template-columns: repeat(3, 1fr); /* Creates equal-width columns */
     gap: var(--standard-gap); 
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -94,6 +94,7 @@ Cafe Gallery Styles
     border-radius: 8px;
     /* border: 1px solid var(--dark-fuchsia); */
     cursor: pointer;
+    aspect-ratio: 4 / 3; 
 }
 
 .cafe-container .gallery-photo {
