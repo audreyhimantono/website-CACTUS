@@ -79,6 +79,12 @@ Small Screen Compatibility
 @media (max-width: 1341px) {}
 
 @media (max-width: 991px) {
+    .home-section {
+        /* Set a negative margin to counteract the padding on the <main> element. */
+        margin-right: calc(var(--medium-padding-x) * -1);
+        margin-left: calc(var(--medium-padding-x) * -1);
+    }
+
     main .home-section .home-introduction {
         margin-top: calc((var(--small-header-size) + 30px) * -1); /* Negative adjustment based on header height (40px+30px) */
     }
@@ -90,6 +96,12 @@ Small Screen Compatibility
 }
 
 @media (max-width: 767px) {
+    .home-section {
+        /* Set a negative margin to counteract the padding on the <main> element. */
+        margin-right: calc(var(--small-padding-x) * -1);
+        margin-left: calc(var(--small-padding-x) * -1);
+    }
+
     .home-introduction {
         min-height: 70vh; 
         padding: var(--xsmall-padding-y);
@@ -97,6 +109,12 @@ Small Screen Compatibility
 }
 
 @media (max-width: 575px) {
+    .home-section {
+        /* Set a negative margin to counteract the padding on the <main> element. */
+        margin-right: calc(var(--xsmall-padding-x) * -1);
+        margin-left: calc(var(--xsmall-padding-x) * -1);
+    }
+    
     .home-introduction {
         min-height: 60vh; 
         padding: 0.var(--xxsmall-padding-y);
