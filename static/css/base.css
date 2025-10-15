@@ -83,7 +83,7 @@ Base and Utility Classes
     --small-gap: 0.5rem;
 
     --standard-header-size: 80px;
-    --small-header-size: 40px;
+    --small-header-size: 60px;
     --standard-footer-size: 110px;
     --small-footer-size: 70px;
 
@@ -462,7 +462,7 @@ Responsive Menu Bars, Small Screen Compatibility
     .header-area .main-nav h1.header-title {
         margin: 0;
 
-        font-size: var(--xsmall-heading-font); 
+        font-size: clamp(var(--xsmall-heading-font), 2vw, 2rem);
         line-height: var(--small-header-size); 
     }
 
@@ -522,7 +522,7 @@ Responsive Menu Bars, Small Screen Compatibility
         display: block; /* Makes the icon visible */
         cursor: pointer;
 
-        font-size: var(--xsmall-heading-font);
+        font-size: clamp(var(--xsmall-heading-font), 2vw, 2rem);
         color: var(--text-black);
     }
 
@@ -545,8 +545,8 @@ Responsive Menu Bars, Small Screen Compatibility
     }
 
     .header-area .main-nav h1.header-title {
-        font-size: 15px;
-        line-height: 40px;
+        font-size: clamp(var(--xsmall-heading-font), 2vw, 2rem);
+        line-height: var(--small-header-size);
     }
 }
 
