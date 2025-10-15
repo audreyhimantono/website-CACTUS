@@ -669,14 +669,14 @@ Internal Item Styling
     margin-top: var(--xsmall-margin-y);
     margin-bottom: var(--xsmall-margin-y);
 
-    font-size: clamp(0.75em, 1rem, 1rem);
+    font-size: clamp(0.9rem, 1vw, 1rem);
 }
 
 .expertise-item p.conclusion {
     margin-top: auto; 
     margin-bottom: 0; /* Ensure it stays at the bottom */
 
-    font-size: clamp(var(--xxsmall-heading-font), 1.1vw, var(--xsmall-heading-font));
+    font-size: clamp(1rem, 1.1vw, var(--xsmall-heading-font));
     font-style: italic; 
 }
 
@@ -822,7 +822,7 @@ Internal Item Styling
     vertical-align: middle;
     line-height: 1;
 
-    font-size: clamp(var(--xxsmall-heading-font), 1.1vw, var(--xsmall-heading-font));
+    font-size: clamp(1rem, 1.1vw, var(--xsmall-heading-font));
     font-style: italic; 
 }
 
